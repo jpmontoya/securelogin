@@ -1,0 +1,5 @@
+<div class="container">
+    <h1>PRIVATE</h1>
+    <h4 [innerHTML]="$userName | async | protectXss"></h4>
+    <h4 [innerHTML]="$userEmail | async | protectXss"></h4>
+</div>

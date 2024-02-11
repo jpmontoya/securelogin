@@ -1,0 +1,8 @@
+<div class="navbar">
+    <button routerLink="">Public</button>
+    <button routerLink="private">Private</button>
+    <button routerLink="permissions">Permissions</button>
+    <button routerLink="login">Login</button>
+</div>
+<app-loading *ngIf="loading | async"></app-loading>
+<router-outlet></router-outlet>

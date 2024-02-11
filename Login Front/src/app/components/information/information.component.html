@@ -1,0 +1,28 @@
+<div class="container">
+    <ul>
+        <h3>A tener en cuenta del lado del Cliente</h3>
+        <ol style="font-size: 1.5rem;">
+            <h5>Inputs Auth Login</h5>
+            <li>Validators.required</li>
+            <li>Validators.pattern(REGEX EMAIL)</li>
+            <li>Bloqueo de usuario después de 5 intentos fallidos (1m)</li>
+        </ol>
+        <ol style="font-size: 1.5rem;">
+            <h5>Show Values DOM</h5>
+            <li>Los datos provenientes de la API y que se muestre en el DOM, deben pasar por el pipe protect-xss.</li>
+            <li>Al imprimir variables en el dom, no usar doble llave, sino el atributo [innerHTML]="variable | pipe"</li>
+        </ol>
+    </ul>
+    <ul>
+        <h3>A tener en cuenta del lado del Servidor</h3>
+        <ol style="font-size: 1.5rem;">
+            <h5>Json Web Token</h5>
+            <li>Utilizar tokens para el inicio de sesiones</li>
+            <li>El token se debe almacenar en una tabla de sesiones con datos importantes: ip, estado de sesión, token, activo</li>
+            <li>Los datos encriptados en el token deben ser mínimos: userID, user/email, roles/permisos, configuraciones personalizadas, fecha de expiración</li>
+            <li>En cada consulta al servidor o ejecución del CRUD, se debe enviar y validar el token</li>
+            <li>Lo mejor es almacenar el token en cookies, pero es opcional</li>
+            <li>Evitar el robo de tokens validando también la ip de consulta</li>
+        </ol>
+    </ul>
+</div>

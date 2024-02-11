@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="form-container">
+        <form [formGroup]="form" (ngSubmit)="submit()">
+            <div class="inputGroup">
+                <label for="inputEmail">Correo electrónico</label>
+                <input type="text" formControlName="email" placeholder="ejemplo@correo.com" id="inputEmail">
+                <div class="inputError" *ngIf="form.controls.email.errors?.required && form.controls.email.touched">Este campo es obligatorio</div>
+                <div class="inputError" *ngIf="form.controls.email.errors?.pattern && form.controls.email.touched">Ingrese un correo válido</div>
+            </div>
+            <div class="inputGroup">
+                <label for="inputPassword">Contraseña</label>
+                <input type="password" formControlName="password" placeholder="********" id="inputPassword">
+                <div class="inputError" *ngIf="form.controls.password.errors?.required && form.controls.password.touched">Este campo es obligatorio</div>
+                <div class="inputError" *ngIf="form.controls.password.errors?.pattern && form.controls.password.touched">Contraseña inválida</div>
+            </div>
+            <div>
+                <input type="button" value="Olvidé mi contraseña">
+            </div>
+            <br>
+            <button type="submit" [disabled]="form.invalid">Iniciar Sesión</button>
+        </form>
+    </div>
+</div>
